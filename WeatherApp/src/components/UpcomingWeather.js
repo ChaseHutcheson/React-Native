@@ -1,12 +1,16 @@
 import React from 'react'
-import { SafeAreaView, StyleSheet, Text } from 'react-native'
+import { SafeAreaView, StyleSheet, Text, Platform, StatusBar } from 'react-native'
 
 const UpcomingWeather = () => {
   return (
-    <SafeAreaView style={styles.container}>
-        <Text>Upcoming Weather</Text>
+    <SafeAreaView
+      style={{
+        paddingTop: Platform.OS == "android" ? StatusBar.currentHeight : 0,
+      }}
+    >
+      <Text>Upcoming Weather</Text>
     </SafeAreaView>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
